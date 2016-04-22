@@ -48,3 +48,9 @@ ResampleDatasets <- function(data, cluster_id, resample_id_df) {
            data = data,
            cluster_id = cluster_id)
 }
+
+
+## Function to check for wcr_data class
+is.wcr_data <- function(x, ...) {
+    any(class(x) %in% "wcr_data")
+}
