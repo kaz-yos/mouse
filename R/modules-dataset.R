@@ -25,28 +25,34 @@ ResampleId <- function(n_k_vec, Q) {
 
 
 ## Function to create a resampled indpendent dataset using single ID vector
-ResampleDataset <- function(data, cluster_id, resample_id_vec) {
-    ## Split by cluster ID
-    lst_data <- split(data, data[,cluster_id])
+ResampleDataset <- function(lst_data, resample_id_vec) {
+
     ## Pick appropriate row within each cluster
     lapply(seq_along(resample_id_vec), function(k) {
+
         ## Get selected row number for cluster k
         within_cluster_id <- resample_id_vec[k]
         ## Get data frame for cluster k
         df <- lst_data[[k]]
         ## Pick selected observation
         df[within_cluster_id,, drop = FALSE]
+
+        ## row combine
     }) %>% do.call(rbind, .)
 }
 
 
 ## Function to create a list of Q resampled independence datasets
 ResampleDatasets <- function(data, cluster_id, resample_id_df) {
+
+    ## Split by cluster ID
+    lst_data <- split(data, data[,cluster_id])
+
+    ## Loop over resample id vector in resample_id_df
     lapply(resample_id_df,
            ## Leave resample_id_vec unfilled
            ResampleDataset,
-           data = data,
-           cluster_id = cluster_id)
+           lst_data = lst_data)
 }
 
 
