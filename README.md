@@ -1,11 +1,11 @@
 mouse (developmental repo)
 ===============================================================================
 
-[![Travis-CI Build Status](https://travis-ci.org/kaz-yos/wcr.svg?branch=develop)](https://travis-ci.org/kaz-yos/wcr)
+[![Travis-CI Build Status](https://travis-ci.org/kaz-yos/mouse.svg?branch=develop)](https://travis-ci.org/kaz-yos/mouse)
 
 **An R package to facilitate within cluster resampling**
 
-This package facilitates within cluster resampling (a.k.a. multiple outputation)
+This package facilitates within-cluster resampling (a.k.a. multiple outputation)
 
 
 mouse code example
