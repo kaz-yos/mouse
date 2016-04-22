@@ -17,7 +17,7 @@
 ##' library(wcr)
 ##'
 ##' @export
-PoolWcr <- function(wcr_models) {
+pool <- function(wcr_models) {
     ## Coefficients
     coefs <- lapply(wcr_models, coef) %>%
         do.call(rbind, .)

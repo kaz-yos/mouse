@@ -17,7 +17,7 @@
 ##' library(wcr)
 ##'
 ##' @export
-WcrData <- function(data, cluster_id, Q) {
+mouse <- function(data, cluster_id, Q) {
     ## Assess cluster sizes
     n_k_vec <- ClusterSizes(data = data, cluster_id = cluster_id)
     ## Resample IDs
