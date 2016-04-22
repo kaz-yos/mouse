@@ -6,11 +6,10 @@
 ##' @aliases wcr-package wcr
 ##' @docType package
 ##' @import dplyr
-##' @importFrom stats as.formula coef confint mean sd var
-##' @importFrom utils combn
+##' @importFrom stats coef confint var
 ##' @note Acknowledgement:
 ##'
-##' Shunguang Wang for his support in development
+##' Shunguang Wang for his support in development.
 ##'
 ##' Developmental repository is on github. Your contributions are appreciated.
 ##'
