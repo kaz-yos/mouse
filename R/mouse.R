@@ -4,20 +4,20 @@
 ##'
 ##' @details detailed description
 ##'
-##' @return An object of class \code{wcr_data}, which is a list of resampled datasets, each of which consists of independent data points.
+##' @return An object of class \code{mouse_data}, which is a list of resampled datasets, each of which consists of independent data points.
 ##'
 ##' @references HOffman EB, SEN PK, Weinberg CR. (2001). Within-cluster resampling. \emph{Biometrika}, \bold{88}, 1121-1134.
 ##'
 ##' @author Kazuki Yoshida
 ##' @seealso
-##' \code{\link{print.wcr_data}}
+##' \code{\link{print.mouse_data}}
 ##' @examples
 ##'
 ##' ## Load
-##' library(wcr)
+##' library(mouse)
 ##'
 ##' @export
-WcrData <- function(data, cluster_id, Q) {
+mouse <- function(data, cluster_id, Q) {
     ## Assess cluster sizes
     n_k_vec <- ClusterSizes(data = data, cluster_id = cluster_id)
     ## Resample IDs
@@ -27,6 +27,6 @@ WcrData <- function(data, cluster_id, Q) {
                             cluster_id = cluster_id,
                             resample_id_df = resample_id_df)
     ## Give class name
-    class(out) <- "wcr_data"
+    class(out) <- "mouse_data"
     out
 }

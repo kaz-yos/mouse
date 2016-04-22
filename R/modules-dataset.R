@@ -50,7 +50,7 @@ ResampleDatasets <- function(data, cluster_id, resample_id_df) {
 }
 
 
-## Function to check for wcr_data class
-is.wcr_data <- function(x, ...) {
-    any(class(x) %in% "wcr_data")
+## Function to check for mouse_data class
+is.mouse_data <- function(x, ...) {
+    any(class(x) %in% "mouse_data")
 }

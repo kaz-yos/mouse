@@ -6,10 +6,10 @@
 ################################################################################
 
 ## Basic methods
-coef.wcr <- function(x, ...) {
+coef.mouse <- function(x, ...) {
     x$coef
 }
 
-vcov.wcr <- function(x, ...) {
+vcov.mouse <- function(x, ...) {
     x$vcov
 }

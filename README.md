@@ -1,21 +1,21 @@
-wcr (developmental repo)
+mouse (developmental repo)
 ===============================================================================
 
-[![Travis-CI Build Status](https://travis-ci.org/kaz-yos/wcr.svg?branch=develop)](https://travis-ci.org/kaz-yos/wcr)
+[![Travis-CI Build Status](https://travis-ci.org/kaz-yos/mouse.svg?branch=develop)](https://travis-ci.org/kaz-yos/mouse)
 
 **An R package to facilitate within cluster resampling**
 
-Some description
+This package facilitates within-cluster resampling (a.k.a. multiple outputation)
 
 
-wcr code example
+mouse code example
 -------------------------------------------------------------------------------
 
 
 ```
 
 > ## Load package
-> library(wcr)
+> library(mouse)
 > ## Load data
 
 ```
@@ -35,7 +35,7 @@ You first need to install the devtools package to do the following. You can choo
 ## Install devtools (if you do not have it already)
 > install.packages("devtools")
 ## Install directly from github (develop branch)
-> devtools::install_github(repo = "kaz-yos/wcr", ref = "develop")
+> devtools::install_github(repo = "kaz-yos/mouse", ref = "develop")
 
 ```
 

@@ -1,6 +1,6 @@
-Package: wcr
+Package: mouse
 Type: Package
-Title: Within-cluster resampling
+Title: Multiple Outputation USEr interface
 Version: 0.1.0
 Date: 2016-04-22
 Author: Kazuki Yoshida
@@ -8,15 +8,10 @@ Maintainer: Kazuki Yoshida <kazukiyoshida@mail.harvard.edu>
 Description: Facilitate within-cluster resampling (a.k.a. multiple outputation)
 License: GPL-2
 Imports:
-    survey,
-    MASS,
-    e1071,
-    zoo,
-    gmodels,
-    nlme
+    dplyr
 Suggests:
     testthat,
     rmarkdown
-URL: https://github.com/kaz-yos/wcr
+URL: https://github.com/kaz-yos/mouse
 VignetteBuilder: rmarkdown
 RoxygenNote: 5.0.1
