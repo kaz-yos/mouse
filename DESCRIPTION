@@ -1,0 +1,22 @@
+Package: wcr
+Type: Package
+Title: Within-cluster resampling
+Version: 0.1.0
+Date: 2016-04-22
+Author: Kazuki Yoshida
+Maintainer: Kazuki Yoshida <kazukiyoshida@mail.harvard.edu>
+Description: Facilitate within-cluster resampling (a.k.a. multiple outputation)
+License: GPL-2
+Imports:
+    survey,
+    MASS,
+    e1071,
+    zoo,
+    gmodels,
+    nlme
+Suggests:
+    testthat,
+    rmarkdown
+URL: https://github.com/kaz-yos/wcr
+VignetteBuilder: rmarkdown
+RoxygenNote: 5.0.1
