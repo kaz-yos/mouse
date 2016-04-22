@@ -1,27 +1,27 @@
-##' Facilitate analyzing \code{wcr_data} class objects
+##' Facilitate analyzing \code{mouse_data} class objects
 ##'
-##' \code{with} method for the \code{wcr_data} class objects created by \code{\link{WcrData}} function.
+##' \code{with} method for the \code{mouse_data} class objects created by \code{\link{mouse}} function.
 ##'
-##' @param x Object returned by \code{\link{WcrData}} function.
+##' @param x Object returned by \code{\link{mouse}} function.
 ##' @param expr Some analysis function invocation. Variable in the resampled dataset can be directly called, thus, no need to fill in the \code{data} argument.
 ##' @param ... For compatibility with generic. Ignored.
 ##'
-##' @return An object with class \code{wcr_models}, which is a list of model output objects.
+##' @return An object with class \code{mouse_models}, which is a list of model output objects.
 ##' @author Kazuki Yoshida
 ##' @seealso
-##' \code{\link{WcrData}}
+##' \code{\link{mouse}}
 ##' @examples
 ##'
 ##' ## See examples for ...
 ##'
 ##' @export
-with.wcr_data <- function (data, expr, ...) {
+with.mouse_data <- function (data, expr, ...) {
 
     ## Taken from mice::with.mids()
 
     ## Check data format
-    if (!is.wcr_data(data)) {
-        stop("The data must have class wcr_data")
+    if (!is.mouse_data(data)) {
+        stop("The data must have class mouse_data")
     }
 
     ## Capture expression as a call before eval
@@ -41,6 +41,6 @@ with.wcr_data <- function (data, expr, ...) {
         out
     })
 
-    class(lstOut) <- "wcr_models"
+    class(lstOut) <- "mouse_models"
     lstOut
 }
