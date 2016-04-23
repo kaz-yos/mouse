@@ -4,15 +4,17 @@
 \alias{print.mouse}
 \title{Shows WCR results for a \code{mouse} class object}
 \usage{
-\method{print}{mouse}(x, ...)
+\method{print}{mouse}(x, printToggle = TRUE, ...)
 }
 \arguments{
-\item{...}{For compatibility with generic. Ignored.}
+\item{x}{An object that has the \code{mouse} class to be shown.}
 
-\item{object}{An object that has the \code{mouse} class to be shown.}
+\item{printToggle}{whether to print results. Turn off when capturing the invisibly returned matrix.}
+
+\item{...}{For compatibility with generic. Ignored.}
 }
 \value{
-None. Results are printed.
+Matrix of coefficients, standard errors, Z test statistics, and p-values.
 }
 \description{
 Shows within-cluster resampling results for a \code{mouse} class object.
