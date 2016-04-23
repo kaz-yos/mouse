@@ -15,7 +15,7 @@
 ##'
 ##' @export
 print.mouse <- function(x, ...) {
-    cat("Within-cluster resampling results based on ", x$Q, "iterations\n")
+    cat("Within-cluster resampling results based on", x$Q, "iterations\n")
 
     cat("\nModel formula\n")
     print(x$formula)
@@ -30,4 +30,5 @@ print.mouse <- function(x, ...) {
                     2 * pnorm(abs(resTab[,3]), lower.tail = FALSE))
     colnames(resTab) <- c("Estimate", "Std. Error", "z value", "Pr(|z|>)")
     print(resTab)
+    invisible(resTab)
 }
