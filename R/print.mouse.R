@@ -16,12 +16,7 @@
 ##'
 ##' @export
 print.mouse <- function(x, printToggle = TRUE, ...) {
-    cat("Within-cluster resampling results based on", x$Q, "iterations\n")
 
-    cat("\nModel formula\n")
-    print(x$formula)
-
-    cat("\nEffect estimates\n")
     ## Construct fixed effects table
     resTab <- cbind(coef(x),
                     sqrt(diag(vcov(x))))
@@ -30,10 +25,18 @@ print.mouse <- function(x, printToggle = TRUE, ...) {
     resTab <- cbind(resTab,
                     2 * pnorm(abs(resTab[,3]), lower.tail = FALSE))
     colnames(resTab) <- c("Estimate", "Std. Error", "z value", "Pr(|z|>)")
+
     ## Print only if printToggle is TRUE
     if (printToggle) {
+        cat("Within-cluster resampling results based on", x$Q, "iterations\n")
+
+        cat("\nModel formula\n")
+        print(x$formula)
+
+        cat("\nEffect estimates\n")
         print(resTab)
     }
+
     ## Return result matrix part invisibly
     invisible(resTab)
 }
