@@ -1,6 +1,6 @@
 ##' Shows WCR results for a \code{mouse} class object
 ##'
-##' Shows within-cluster resampling results for a \code{mouse} class object, which is a list of model outputs.
+##' Shows within-cluster resampling results for a \code{mouse} class object.
 ##'
 ##'
 ##' @param object An object that has the \code{mouse} class to be shown.
