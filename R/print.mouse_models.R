@@ -21,5 +21,5 @@ print.mouse_models <- function(x, ...) {
     cat("Each model fit can be accessed as list elements\n")
     formula <- x[[1]]$call
     cat("\nModel formula\n")
-    print(x$formula)
+    print(formula)
 }
