@@ -16,8 +16,8 @@
 ##' @export
 confint.mouse <- function(x, level = 0.95) {
     alpha <- 1 - level
-    lower <- coef(x) - qnorm(p = alpha / 2) * sqrt(diag(vcov(x)))
-    upper <- coef(x) + qnorm(p = alpha / 2) * sqrt(diag(vcov(x)))
+    lower <- coef(x) - qnorm(p = level + alpha / 2) * sqrt(diag(vcov(x)))
+    upper <- coef(x) + qnorm(p = level + alpha / 2) * sqrt(diag(vcov(x)))
     data.frame(lower = lower,
                upper = upper)
 }
