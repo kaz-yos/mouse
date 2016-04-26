@@ -15,5 +15,11 @@
 ##'
 ##' @export
 print.mouse_models <- function(x, ...) {
-    print(pool(x))
+    Q <- length(x)
+    cat("Within-cluster resampling model fits based on", Q, "iterations\n")
+    cat("Use pool() to aggregate results\n")
+    cat("Each model fit can be accessed as a list element\n")
+    formula <- x[[1]]$call
+    cat("\nModel formula\n")
+    print(formula)
 }

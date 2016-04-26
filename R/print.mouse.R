@@ -1,11 +1,12 @@
 ##' Shows WCR results for a \code{mouse} class object
 ##'
-##' Shows within-cluster resampling results for a \code{mouse} class object, which is a list of model outputs.
+##' Shows within-cluster resampling results for a \code{mouse} class object.
 ##'
 ##'
-##' @param object An object that has the \code{mouse} class to be shown.
+##' @param x An object that has the \code{mouse} class to be shown.
+##' @param printToggle whether to print results. Turn off when capturing the invisibly returned matrix.
 ##' @param ... For compatibility with generic. Ignored.
-##' @return None. Results are printed.
+##' @return Matrix of coefficients, standard errors, Z test statistics, and p-values.
 ##' @author Kazuki Yoshida
 ##' @seealso
 ##' \code{\link{mouse}}, \code{\link{with.mouse_data}}
@@ -14,13 +15,8 @@
 ##' ## See examples for mouse and with.mouse_data
 ##'
 ##' @export
-print.mouse <- function(x, ...) {
-    cat("Within-cluster resampling results based on ", x$Q, "iterations\n")
+print.mouse <- function(x, printToggle = TRUE, ...) {
 
-    cat("\nModel formula\n")
-    print(x$formula)
-
-    cat("\nEffect estimates\n")
     ## Construct fixed effects table
     resTab <- cbind(coef(x),
                     sqrt(diag(vcov(x))))
@@ -29,5 +25,18 @@ print.mouse <- function(x, ...) {
     resTab <- cbind(resTab,
                     2 * pnorm(abs(resTab[,3]), lower.tail = FALSE))
     colnames(resTab) <- c("Estimate", "Std. Error", "z value", "Pr(|z|>)")
-    print(resTab)
+
+    ## Print only if printToggle is TRUE
+    if (printToggle) {
+        cat("Within-cluster resampling results based on", x$Q, "iterations\n")
+
+        cat("\nModel formula\n")
+        print(x$formula)
+
+        cat("\nEffect estimates\n")
+        print(resTab)
+    }
+
+    ## Return result matrix part invisibly
+    invisible(resTab)
 }
